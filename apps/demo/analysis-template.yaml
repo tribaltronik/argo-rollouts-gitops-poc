@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: rollouts-demo
+  namespace: demo
+spec:
+  args:
+    - name: service-name
+      value: rollouts-demo-stable
+  metrics:
+    - name: http-health
+      provider:
+        web:
+          url: http://{{ args.service-name }}/
+          jsonPath: "{$.results.ok}"
+      successCondition: result == 'true'
