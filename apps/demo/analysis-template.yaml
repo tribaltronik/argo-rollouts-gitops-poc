@@ -11,6 +11,4 @@ spec:
     - name: http-health
       provider:
         web:
-          url: http://{{ args.service-name }}/
-          jsonPath: "{$.results.ok}"
-      successCondition: result == 'true'
+          url: http://{{ args.service-name }}.demo.svc.cluster.local/

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: file:///home/tribaltronik/projects/argo-rollouts-gitops-poc
+    repoURL: file:///repo
     targetRevision: main
     path: apps/demo
   destination:
